@@ -29,7 +29,5 @@ public class BaseTest {
         productsPage = new ProductsPage();
         excelReader = new ExcelReader("src/test/java/TestData.xlsx");
 
-
-
     }
 }

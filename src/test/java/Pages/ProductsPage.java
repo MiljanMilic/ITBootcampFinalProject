@@ -4,7 +4,6 @@ import Base.BaseTest;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 
 public class ProductsPage extends BaseTest {
     public ProductsPage(){
@@ -16,7 +15,5 @@ public class ProductsPage extends BaseTest {
     public WebElement pageLogo;
     @FindBy(id = "shopping_cart_container")
     public WebElement shoppingCart;
-
-    //--------------------------------
 
 }
