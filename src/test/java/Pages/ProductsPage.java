@@ -17,6 +17,6 @@ public class ProductsPage extends BaseTest {
     @FindBy(id = "shopping_cart_container")
     public WebElement shoppingCart;
 
-    //---------------------
+    //--------------------------------
 
 }
