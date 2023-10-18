@@ -2,8 +2,7 @@ package Tests;
 
 import Base.BaseTest;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class LoginTest extends BaseTest {
     String validUsername = "standard_user";
@@ -12,24 +11,24 @@ public class LoginTest extends BaseTest {
     @BeforeMethod
     public void pageSetUp() {
         driver.manage().window().maximize();
-        driver.navigate().to("https://www.saucedemo.com/v1/");
+        driver.navigate().to("https://www.saucedemo.com");
     }
 
-    @Test(priority = 10)
+    @Test
     public void userCanLogIn() {
         loginPage.enterUsername(validUsername);
         loginPage.enterPassword(validPassword);
         loginPage.clickOnLoginButton();
 
-        String expectedURL = "https://www.saucedemo.com/v1/inventory.html";
+        String expectedURL = "https://www.saucedemo.com/inventory.html";
         Assert.assertEquals(driver.getCurrentUrl(), expectedURL);
         Assert.assertTrue(productsPage.pageTitle.isDisplayed());
         Assert.assertTrue(productsPage.pageLogo.isDisplayed());
-        Assert.assertTrue(productsPage.shoppingCart.isDisplayed());
+        Assert.assertTrue(productsPage.shoppingCartButton.isDisplayed());
 
     }
 
-    @Test(priority = 20)
+    @Test(priority = 10)
     public void loginWithInvalidUsername() {
 
         for (int i = 1; i <= excelReader.getLastRow("Sheet1"); i++) {
@@ -46,7 +45,7 @@ public class LoginTest extends BaseTest {
 
     }
 
-    @Test(priority = 30)
+    @Test(priority = 20)
     public void loginWithInvalidPassword() {
 
         for (int i = 1; i <= excelReader.getLastRow("Sheet1"); i++) {
@@ -63,7 +62,7 @@ public class LoginTest extends BaseTest {
 
     }
 
-    @Test(priority = 40)
+    @Test(priority = 30)
     public void usernameFieldEmpty() {
         loginPage.enterPassword(validPassword);
         loginPage.clickOnLoginButton();
@@ -74,7 +73,7 @@ public class LoginTest extends BaseTest {
 
     }
 
-    @Test(priority = 50)
+    @Test(priority = 40)
     public void passwordFieldEmpty() {
         loginPage.enterUsername(validUsername);
         loginPage.clickOnLoginButton();
@@ -85,4 +84,8 @@ public class LoginTest extends BaseTest {
 
     }
 
+    @AfterClass
+    public void tearDown(){
+        driver.quit();
+    }
 }
