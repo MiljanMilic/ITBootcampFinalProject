@@ -22,6 +22,7 @@ public class BaseTest {
     public CheckoutInfoPage checkoutInfoPage;
     public CheckoutOverviewPage checkoutOverviewPage;
     public CheckoutCompletePage checkoutCompletePage;
+    public NavigationBar navigationBar;
 
     @BeforeClass
     public void setUp() throws IOException {
@@ -37,6 +38,7 @@ public class BaseTest {
         checkoutInfoPage = new CheckoutInfoPage();
         checkoutOverviewPage = new CheckoutOverviewPage();
         checkoutCompletePage = new CheckoutCompletePage();
+        navigationBar = new NavigationBar();
 
     }
 

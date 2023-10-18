@@ -2,7 +2,9 @@ package Tests;
 
 import Base.BaseTest;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
     String validUsername = "standard_user";
@@ -24,7 +26,7 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(), expectedURL);
         Assert.assertTrue(productsPage.pageTitle.isDisplayed());
         Assert.assertTrue(productsPage.pageLogo.isDisplayed());
-        Assert.assertTrue(productsPage.shoppingCartButton.isDisplayed());
+        Assert.assertTrue(productsPage.shoppingCartIcon.isDisplayed());
 
     }
 
@@ -85,7 +87,7 @@ public class LoginTest extends BaseTest {
     }
 
     @AfterClass
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }

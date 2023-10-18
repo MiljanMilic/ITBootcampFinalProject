@@ -31,7 +31,7 @@ public class ProductPurchaseTest extends BaseTest{
     }
 
     @AfterClass
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 

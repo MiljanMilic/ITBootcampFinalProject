@@ -14,11 +14,11 @@ public class ProductsPage extends BaseTest {
     @FindBy(className = "app_logo")
     public WebElement pageLogo;
     @FindBy(id = "shopping_cart_container")
-    public WebElement shoppingCartButton;
+    public WebElement shoppingCartIcon;
     @FindBy(css = ".btn")
     public WebElement addToCartButton;
-
-
+    @FindBy(css=".btn.btn_secondary.btn_small.btn_inventory ")
+    public WebElement removeButton;
 
     //--------------------------------
 
@@ -26,6 +26,10 @@ public class ProductsPage extends BaseTest {
         addToCartButton.click();
     }
     public void clickOnShoppingCartButton(){
-        shoppingCartButton.click();
+        shoppingCartIcon.click();
     }
+    public void clickOnRemoveButton(){
+        removeButton.click();
+    }
+
 }
