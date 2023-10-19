@@ -30,8 +30,7 @@ public class CartTest extends BaseTest {
         Assert.assertEquals(productsPage.shoppingCartIcon.getText(), numberInCartAfterAdd);
         productsPage.clickOnShoppingCartButton();
         cartPage.clickOnContinueShoppingButton();
-        String expectedURL = "https://www.saucedemo.com/inventory.html";
-        Assert.assertEquals(driver.getCurrentUrl(), expectedURL);
+        Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/inventory.html");
     }
 
     @Test(priority = 30)
@@ -39,12 +38,7 @@ public class CartTest extends BaseTest {
         productsPage.clickOnAddToCartButton();
         productsPage.clickOnShoppingCartButton();
         cartPage.clickOnCheckoutButton();
-        String expectedURL = "https://www.saucedemo.com/checkout-step-one.html";
-        Assert.assertEquals(driver.getCurrentUrl(), expectedURL);
+        Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/checkout-step-one.html");
     }
 
-    @AfterClass
-    public void tearDown() {
-        driver.quit();
-    }
 }

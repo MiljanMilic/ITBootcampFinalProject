@@ -40,9 +40,8 @@ public class LoginTest extends BaseTest {
             loginPage.enterPassword(validPassword);
             loginPage.clickOnLoginButton();
 
-            String expectedErrorMessage = "Epic sadface: Username and password do not match any user in this service";
             Assert.assertTrue(loginPage.error.isDisplayed());
-            Assert.assertEquals(loginPage.errorMessage.getText(), expectedErrorMessage);
+            Assert.assertEquals(loginPage.errorMessage.getText(), "Epic sadface: Username and password do not match any user in this service");
         }
 
     }
@@ -57,9 +56,8 @@ public class LoginTest extends BaseTest {
             loginPage.enterPassword(invalidPassword);
             loginPage.clickOnLoginButton();
 
-            String expectedErrorMessage = "Epic sadface: Username and password do not match any user in this service";
             Assert.assertTrue(loginPage.error.isDisplayed());
-            Assert.assertEquals(loginPage.errorMessage.getText(), expectedErrorMessage);
+            Assert.assertEquals(loginPage.errorMessage.getText(), "Epic sadface: Username and password do not match any user in this service");
         }
 
     }
@@ -69,9 +67,8 @@ public class LoginTest extends BaseTest {
         loginPage.enterPassword(validPassword);
         loginPage.clickOnLoginButton();
 
-        String expectedErrorMessage = "Epic sadface: Username is required";
         Assert.assertTrue(loginPage.error.isDisplayed());
-        Assert.assertEquals(loginPage.errorMessage.getText(), expectedErrorMessage);
+        Assert.assertEquals(loginPage.errorMessage.getText(), "Epic sadface: Username is required");
 
     }
 
@@ -80,14 +77,9 @@ public class LoginTest extends BaseTest {
         loginPage.enterUsername(validUsername);
         loginPage.clickOnLoginButton();
 
-        String expectedErrorMessage = "Epic sadface: Password is required";
         Assert.assertTrue(loginPage.error.isDisplayed());
-        Assert.assertEquals(loginPage.errorMessage.getText(), expectedErrorMessage);
+        Assert.assertEquals(loginPage.errorMessage.getText(), "Epic sadface: Password is required");
 
     }
 
-    @AfterClass
-    public void tearDown() {
-        driver.quit();
-    }
 }

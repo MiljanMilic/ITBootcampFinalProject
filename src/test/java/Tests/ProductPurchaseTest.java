@@ -23,17 +23,10 @@ public class ProductPurchaseTest extends BaseTest{
         checkoutInfoPage.inputPostalCode("11000");
         checkoutInfoPage.clickOnContinueButton();
         checkoutOverviewPage.clickOnFinishButton();
-        String expectedMessage = "Thank you for your order!";
         Assert.assertTrue(checkoutCompletePage.completeMessage.isDisplayed());
-        Assert.assertEquals(checkoutCompletePage.completeMessage.getText(), expectedMessage);
+        Assert.assertEquals(checkoutCompletePage.completeMessage.getText(), "Thank you for your order!");
         Assert.assertTrue(checkoutCompletePage.backHomeButton.isDisplayed());
 
     }
-
-    @AfterClass
-    public void tearDown() {
-        driver.quit();
-    }
-
 
 }

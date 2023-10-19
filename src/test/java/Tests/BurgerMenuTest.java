@@ -51,9 +51,5 @@ public class BurgerMenuTest extends BaseTest {
 
     }
 
-    @AfterClass
-    public void tearDown() {
-        driver.quit();
-    }
 
 }
